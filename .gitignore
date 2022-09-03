@@ -102,3 +102,12 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Specific files
+/login.svg
+/tokens.json
+/articles.json
+/modules/memmattersync/src/mem/apikey.txt
+/synced_articles.json
+/files/
+src/mem/apikey.txt

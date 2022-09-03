@@ -1,0 +1,33 @@
+{
+  "name": "memmattersync",
+  "version": "1.0.0",
+  "description": "Syncing your Matter highlights to mem.ai",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node src/main.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JanssenBrm/memmattersync.git"
+  },
+  "keywords": [
+    "matter",
+    "mem.ai",
+    "highlights"
+  ],
+  "author": "Bram Janssen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JanssenBrm/memmattersync/issues"
+  },
+  "homepage": "https://github.com/JanssenBrm/memmattersync#readme",
+  "dependencies": {
+    "@mem-labs/mem-node": "^0.1.1",
+    "qrcode": "^1.5.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^18.7.14"
+  }
+}
