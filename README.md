@@ -1,5 +1,5 @@
 # memmattersync
-A Node script that allows you to easily sync [Matter](https://hq.getmatter.app/) highlights to (mem.ai)[https://get.mem.ai/]. 
+A Node script that allows you to easily sync [Matter](https://hq.getmatter.app/) highlights to [mem.ai](https://get.mem.ai/). 
 Based on your reading list on Matter, the script will fetch the highlights of the fully read articles. 
 In a next step, it will create a mem for each article containing some metadata information and all of your highlights.
 
@@ -9,7 +9,7 @@ In order to prevent duplicate entries in mem, only the articles that have a 100%
 
 ## Prerequisites
 * As this is Node script, it is important to have your [NodeJS](https://nodejs.org/en/download/) environment set up.
-* You will also need an account on both [Matter](https://hq.getmatter.app/) and (mem.ai)[https://get.mem.ai/]
+* You will also need an account on both [Matter](https://hq.getmatter.app/) and [mem.ai](https://get.mem.ai/)
 * In order to sync your articles from Matter you will need the Matter mobile app. This will allow you to grant access based on scanning a QR code.
 
 ### Creating an API key for mem.ai
@@ -37,6 +37,11 @@ Once you've scanned the QR code, the script will save your login and continue th
 Next time you execute the script, it will automatically log you in through the token of previous run.
 
 ## Important files
+
+When the script is executed, it will create a `files` directory that will act as the working directory. 
+In this folder, you will find the following files:
+* `matter/tokens.json` - This file contains the access and refresh tokens for the Matter API integration. Removing this file will retrigger the login procedure through a QR code. Remove this file if you want to sync a different account or if all tokens have expired.
+* `mem/synced_articles.json` - This is a list of all article ID that were already synced with mem. This prevents the script from creating duplicate mems. Removing this file will force a resync of all articles into **new mems**
 
 
 
