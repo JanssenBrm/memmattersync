@@ -90,7 +90,7 @@ export class MatterAPI {
 
         if (!response.ok) {
             const message = 'Matter - could not execute authenticated request'
-            console.error(message, response);
+            console.error(`\x1b[1m\x1b[91mERROR\x1b[0m - ${message}`, response);
             throw new Error(message);
         }
 
@@ -128,7 +128,7 @@ export class MatterAPI {
                 fs.unlinkSync(this.QR_FILE);
             }
         } catch (error) {
-            console.error('Could not login into Matter', error);
+            console.error('\x1b[1m\x1b[91mERROR\x1b[0m - Could not login into Matter', error);
             tokens = undefined;
         }
         this.tokens = tokens;
@@ -224,7 +224,7 @@ export class MatterAPI {
         await this.saveTokens(this.tokens);
 
         if (!this.tokens.access_token) {
-            console.error('Could not refresh access token', payload);
+            console.error('\x1b[1m\x1b[91mERROR\x1b[0m - Could not refresh access token', payload);
             throw new Error("Could not refresh access token");
         } else {
             console.info('Tokens successfully refreshed');
